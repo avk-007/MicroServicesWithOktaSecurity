@@ -1,0 +1,39 @@
+# src/main/resources/application.yml
+#mongodb://localhost:27017
+server:
+  port: 8083  # Change to your desired server port
+
+spring:
+  application:
+    name: RatingService
+
+  data:
+    mongodb:
+      host: localhost  # MongoDB server host
+      port: 27017     # MongoDB server port
+      database: microservices  # Name of the MongoDB database
+  config:
+    import: configserver:http://localhost:8085
+#  profiles:
+#    active: dev
+
+
+
+
+
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+#  client:
+#    fetch-registry: true
+#    register-with-eureka: true
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka/
+#for security
+okta:
+  oauth2:
+    issuer: https://dev-98806091.okta.com/oauth2/default
+    audience: api://default
+
+
+
